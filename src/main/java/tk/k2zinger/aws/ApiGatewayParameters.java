@@ -1,0 +1,5 @@
+package tk.k2zinger.aws;
+
+enum ApiGatewayParameters {
+    ACCESS_KEY, API_KEY, BODY, HEADERS, METHOD, PROFILE, REGION, SECRET_KEY, SECURITY_TOKEN, SERVICE, SESSION_TOKEN, URI
+}
