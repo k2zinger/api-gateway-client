@@ -17,7 +17,7 @@ import static org.apache.http.HttpHeaders.AUTHORIZATION;
 
 class ApiGatewayRequestHeaders {
 
-    static List<Header> calculateHeaders(URI uri, String body, String access_key, String secret_key,
+    static List<Header> calculateHeaders(URI uri, String method, String body, String access_key, String secret_key,
                                          String security_token, String api_key, String region, String service) {
         Date t = now();
         String amzdate = formatDate(t, "yyyyMMdd'T'HHmmss'Z'");
@@ -33,7 +33,7 @@ class ApiGatewayRequestHeaders {
 
         String query = uri.getRawQuery() != null ? uri.getRawQuery() : "";
 
-        String canonical_request = "GET" + "\n" +
+        String canonical_request = method + "\n" +
                 uri.getPath() + "\n" +
                 query + "\n" +
                 canonical_headers + "\n" +

@@ -59,7 +59,7 @@ public class ApiGatewayClient {
 
         service = getArg(params.get(ApiGatewayParameters.SERVICE), "execute-api");
 
-        headers.addAll(ApiGatewayRequestHeaders.calculateHeaders(uri, body, access_key, secret_key, security_token,
+        headers.addAll(ApiGatewayRequestHeaders.calculateHeaders(uri, method, body, access_key, secret_key, security_token,
                 api_key, region.getName(), service));
     }
 
