@@ -5,7 +5,7 @@
     <groupId>tk.k2zinger</groupId>
     <artifactId>api-gateway-client</artifactId>
     <packaging>jar</packaging>
-    <version>0.2-SNAPSHOT</version>
+    <version>0.3-SNAPSHOT</version>
     <name>api-gateway-client</name>
     <url>https://github.com/k2zinger/api-gateway-client</url>
     <description>Client for AWS API Gateway</description>
