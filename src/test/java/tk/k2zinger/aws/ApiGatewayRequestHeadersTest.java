@@ -21,14 +21,14 @@ import static org.powermock.api.mockito.PowerMockito.*;
 public class ApiGatewayRequestHeadersTest {
 
     @Before
-    public void setup() throws Exception {
+    public void setup() {
         spy(ApiGatewayRequestHeaders.class);
         when(ApiGatewayRequestHeaders.now()).thenReturn(new Date(0));
     }
 
     @Test
     public void test_body_hash() throws Exception {
-        List<Header> headers = ApiGatewayRequestHeaders.calculateHeaders(new URI("https://amazonaws.com"), "body", "access", "secret", "", "", "us-east-1", "execute-api");
+        List<Header> headers = ApiGatewayRequestHeaders.calculateHeaders(new URI("https://amazonaws.com"), "POST", "body", "access", "secret", "", "", "us-east-1", "execute-api");
         String content_hash = "";
         for(Header h:headers) {
             if(h.getName().equalsIgnoreCase("x-amz-content-sha256"))
@@ -40,7 +40,7 @@ public class ApiGatewayRequestHeadersTest {
 
     @Test
     public void test_known_signature() throws Exception {
-        List<Header> headers = ApiGatewayRequestHeaders.calculateHeaders(new URI("https://amazonaws.com"), "", "access", "secret", "", "", "us-east-1", "execute-api");
+        List<Header> headers = ApiGatewayRequestHeaders.calculateHeaders(new URI("https://amazonaws.com"), "GET", "", "access", "secret", "", "", "us-east-1", "execute-api");
         String signature = "";
         for(Header h:headers) {
             if(h.getName().equalsIgnoreCase(AUTHORIZATION))
