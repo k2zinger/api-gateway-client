@@ -12,7 +12,7 @@ This API was inspired by [awscurl](https://github.com/okigan/awscurl)
 <dependency>
   <groupId>tk.k2zinger</groupId>
   <artifactId>api-gateway-client</artifactId>
-  <version>0.2</version>
+  <version>0.3</version>
 </dependency>
 ```
 
